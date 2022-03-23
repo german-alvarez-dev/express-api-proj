@@ -28,11 +28,11 @@ router.get('/category/:categoryName', (req, res) => {
 })
 
 
-router.get('/allProducts/:categoryName', (req, res) => {
+router.get('/brand/:brandName', (req, res) => {
     const allProducts = readJSONFile()
 
-    const { categoryName } = req.params
-    const foundProducts = allProducts.filter(product => product.category == categoryName)
+    const { brandName } = req.params
+    const foundProducts = allProducts.filter(product => product.brand == brandName)
 
     res.send(foundProducts)
 })
