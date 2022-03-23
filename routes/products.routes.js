@@ -37,5 +37,6 @@ router.get('/allProducts/:categoryName', (req, res) => {
     res.send(foundProducts)
 })
 
+router.use((req, res) => res.status(404).send({ code: 404, message: 'This route does not exist' }))
 
 module.exports = router
